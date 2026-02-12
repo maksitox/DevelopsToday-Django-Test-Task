@@ -1,0 +1,251 @@
+{
+  "info": {
+    "_postman_id": "08f0cd7a-2d4f-476c-a1a2-2ce21be3f057",
+    "name": "Travel Planner API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Register User",
+          "id": "96d6ec60-86d7-4f18-9405-dd42ee40afc2",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "username",
+                  "value": "{{username}}",
+                  "type": "text",
+                  "uuid": "e6b056fd-89d6-4198-8f75-101ae5b466c3"
+                },
+                {
+                  "key": "password",
+                  "value": "{{password}}",
+                  "type": "text",
+                  "uuid": "e5c32f3c-a300-4f31-9932-e43316f911f8"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base-url}}/api/register/",
+              "host": [
+                "{{base-url}}"
+              ],
+              "path": [
+                "api",
+                "register",
+                ""
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "4b7a3cea-1f09-4b21-9cc3-b5ef1d33a134"
+    },
+    {
+      "name": "Projects",
+      "item": [
+        {
+          "name": "List Projects",
+          "id": "f5a026ee-aff8-405a-ad74-bdfd5c50cde7",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base-url}}/api/projects/",
+              "host": [
+                "{{base-url}}"
+              ],
+              "path": [
+                "api",
+                "projects",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Project",
+          "id": "0ff005be-2a95-4343-9dca-afd7c0fe9394",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\": \"Chicago Trip\", \"description\": \"Art tour\", \"initial_places\": [{\"external_id\": 129884}]}"
+            },
+            "url": {
+              "raw": "{{base-url}}/api/projects/",
+              "host": [
+                "{{base-url}}"
+              ],
+              "path": [
+                "api",
+                "projects",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Project",
+          "id": "d37106cf-8fdc-42ff-9c12-ef2b7ce1c107",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base-url}}/api/projects/1/",
+              "host": [
+                "{{base-url}}"
+              ],
+              "path": [
+                "api",
+                "projects",
+                "1",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Add Place to Project",
+          "id": "61122eef-efca-4965-8c03-1ab1a4573b68",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"external_id\": 24645}"
+            },
+            "url": {
+              "raw": "{{base-url}}/api/projects/1/places/",
+              "host": [
+                "{{base-url}}"
+              ],
+              "path": [
+                "api",
+                "projects",
+                "1",
+                "places",
+                ""
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "24405bbe-3ce8-4262-b059-1e43f6f4b6e5"
+    },
+    {
+      "name": "Places",
+      "item": [
+        {
+          "name": "Get Place",
+          "id": "94734936-75ba-436e-9ce5-d96039ccc3f9",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base-url}}/api/places/1/",
+              "host": [
+                "{{base-url}}"
+              ],
+              "path": [
+                "api",
+                "places",
+                "1",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Mark Place Visited",
+          "id": "a632c495-2932-4dee-a285-a1c463a022b8",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"visited\": true, \"notes\": \"Amazing!\"}"
+            },
+            "url": {
+              "raw": "{{base-url}}/api/places/1/",
+              "host": [
+                "{{base-url}}"
+              ],
+              "path": [
+                "api",
+                "places",
+                "1",
+                ""
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "ff99a2c9-835b-4c66-b87c-f0045780dbb0"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{username}}",
+        "type": "string"
+      },
+      {
+        "key": "password",
+        "value": "{{password}}",
+        "type": "string"
+      }
+    ]
+  }
+}
