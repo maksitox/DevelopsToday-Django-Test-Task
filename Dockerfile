@@ -22,4 +22,4 @@ RUN pip install --upgrade pip && pip install -r requirements.txt
 COPY . /app/
 
 # Default command (can be overridden in docker-compose)
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["sh", "-c", "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"]
