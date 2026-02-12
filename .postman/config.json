@@ -1,0 +1,15 @@
+{
+  "workspace": {
+    "id": "b51afb42-3624-4790-8601-b2ce54523864"
+  },
+  "entities": {
+    "environments": [],
+    "flows": [],
+    "globals": [],
+    "mocks": [],
+    "specs": [],
+    "collections": [
+      "../travel_planner.postman_collection.json"
+    ]
+  }
+}
