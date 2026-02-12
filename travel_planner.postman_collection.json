@@ -4,6 +4,21 @@
         "name": "Travel Planner API",
         "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
     },
+    "auth": {
+        "type": "basic",
+        "basic": [
+            {
+                "key": "password",
+                "value": "password",
+                "type": "string"
+            },
+            {
+                "key": "username",
+                "value": "admin",
+                "type": "string"
+            }
+        ]
+    },
     "item": [
         {
             "name": "Projects",

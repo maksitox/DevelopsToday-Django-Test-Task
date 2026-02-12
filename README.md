@@ -42,6 +42,23 @@ A RESTful API for managing travel projects and places, integrated with the Art I
    python manage.py runserver
    ```
 
+### Authentication
+The API uses **Basic Authentication**. You must include your username and password in the request headers.
+
+1. **Create a User**:
+   ```bash
+   docker-compose run --rm web python manage.py createsuperuser
+   ```
+2. **Make Authenticated Requests**:
+   - **Curl**:
+     ```bash
+     curl -u <username>:<password> http://localhost:8000/api/projects/
+     ```
+   - **Postman**:
+     - Go to "Authorization" tab.
+     - Select "Basic Auth".
+     - Enter Username and Password.
+
 ## API Endpoints
 
 ### Projects
