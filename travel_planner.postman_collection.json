@@ -21,6 +21,28 @@
     },
     "item": [
         {
+            "name": "Auth",
+            "item": [
+                {
+                    "name": "Register User",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"username\": \"newuser\", \"password\": \"securepass\"}"
+                        },
+                        "url": "http://localhost:8000/api/register/"
+                    }
+                }
+            ]
+        },
+        {
             "name": "Projects",
             "item": [
                 {
