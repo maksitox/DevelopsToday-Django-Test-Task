@@ -1,4 +1,5 @@
 from django.urls import reverse
+from django.contrib.auth.models import User
 from rest_framework import status
 from rest_framework.test import APITestCase
 from unittest.mock import patch
@@ -6,6 +7,8 @@ from .models import TravelProject, Place
 
 class TravelProjectTests(APITestCase):
     def setUp(self):
+        self.user = User.objects.create_user(username='testuser', password='password')
+        self.client.force_authenticate(user=self.user)
         self.project_data = {'name': 'Test Project'}
         self.project = TravelProject.objects.create(**self.project_data)
 
