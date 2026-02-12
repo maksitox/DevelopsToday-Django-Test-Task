@@ -1,0 +1,94 @@
+{
+    "info": {
+        "_postman_id": "travel-planner-v1",
+        "name": "Travel Planner API",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Projects",
+            "item": [
+                {
+                    "name": "List Projects",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": "http://localhost:8000/api/projects/"
+                    }
+                },
+                {
+                    "name": "Create Project",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\": \"Chicago Trip\", \"description\": \"Art tour\", \"initial_places\": [{\"external_id\": 129884}]}"
+                        },
+                        "url": "http://localhost:8000/api/projects/"
+                    }
+                },
+                {
+                    "name": "Delete Project",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": "http://localhost:8000/api/projects/1/"
+                    }
+                },
+                {
+                    "name": "Add Place to Project",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"external_id\": 24645}"
+                        },
+                        "url": "http://localhost:8000/api/projects/1/places/"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Places",
+            "item": [
+                {
+                    "name": "Get Place",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": "http://localhost:8000/api/places/1/"
+                    }
+                },
+                {
+                    "name": "Mark Place Visited",
+                    "request": {
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"visited\": true, \"notes\": \"Amazing!\"}"
+                        },
+                        "url": "http://localhost:8000/api/places/1/"
+                    }
+                }
+            ]
+        }
+    ]
+}
