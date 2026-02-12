@@ -1,10 +1,15 @@
 from rest_framework import viewsets, mixins, status
-from rest_framework import viewsets, mixins, status, filters
+from rest_framework import viewsets, mixins, status, filters, generics
 from rest_framework.decorators import action
 from rest_framework.response import Response
+from rest_framework.permissions import AllowAny
 from django.shortcuts import get_object_or_404
 from .models import TravelProject, Place
-from .serializers import TravelProjectSerializer, PlaceSerializer
+from .serializers import TravelProjectSerializer, PlaceSerializer, UserRegistrationSerializer
+
+class UserRegistrationView(generics.CreateAPIView):
+    serializer_class = UserRegistrationSerializer
+    permission_classes = [AllowAny]
 
 class TravelProjectViewSet(viewsets.ModelViewSet):
     queryset = TravelProject.objects.all().order_by('-created_at')
